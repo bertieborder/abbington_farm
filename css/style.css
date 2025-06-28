@@ -1,0 +1,291 @@
+/* COLOR PALETTE
+   pink: #f8807f | orange: #ffbb74 | dark green: #a5c476
+   green: #b3efcd | contrast: #1a1a1a | blue-green: #81d7d4 | dark contrast: #0d3b3e*/
+
+/*Universal reset*/
+* { 
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box; 
+}
+
+/*html and body*/
+html {
+  max-width: 100%;
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  font-style: normal;
+}
+/*This prevents horizontal scrolling on the page and forces page to stay within viewport*/
+html, body {
+  overflow-x: hidden;
+}
+
+/*header section. justify content pushes logo to the left, nav to the right and text spaced evenly between*/
+header {
+  background-color: #81d7d4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+/*Header text is centered absolutely (in desktop view) */
+.header_text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/*navagation*/
+.nav_list ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_list a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #0d3b3e;
+}
+
+.nav_list a:hover {
+  color: #ffbb74;
+}
+
+/*main section home*/
+.main {
+  background-color: #b3efcd;
+  padding: 40px 100px;
+  text-align: center;
+}
+
+.main_video {
+  background-color: #b3efcd;
+  padding: 20px 70px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main_video video {
+  max-width: 100%;
+  height: auto;
+}
+/*end of main/home and start of shop section*/
+
+/*padding provides space inside section, text-align centres everything in section*/
+.shop { 
+  background-color: #81d7d4;
+  padding: 40px 100px;
+  text-align: center;
+}
+
+.shop_text {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.shop img {
+  width: 200px;
+  height: auto;
+  border: 3px solid #ffbb74;
+  border-radius: 30px;
+}
+
+/*image and text grid container, responsive grid fills available space*/
+.shop_images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+/* Individual image and paragraphs */
+.shop_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/*paragraph below each image */
+.shop_images p {
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+/*end of shop section*/
+
+/*activites section, bullet point centrally aligned*/
+.activities_list {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.activities_list ul {
+  list-style-type: disc; 
+  padding-left: 20px;     
+  max-width: 600px;    
+}
+
+.activities_list li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 18px;
+  text-align: left;
+}
+/*end of activities*/
+/*start of contact page*/
+
+/*Contact form*/
+.contact_form {
+  padding: 5% 20%;
+}
+
+form {
+  padding: 0; /* remove padding from form itself */
+}
+
+
+iframe {
+    width: 50%; 
+    margin: 20px auto;
+    display: block;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+input[type="submit"] {
+    background-color: #ffbb74;
+    color: #0d3b3e;
+    border: none;
+    padding: 16px 32px;
+    width: 50%;
+    display: block;
+    margin: 2rem auto;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 18px;      
+    font-weight: bold;      
+    text-transform: uppercase; 
+    letter-spacing: 1px;    
+    font-family:"Sour Gummy", sans-serif;
+}
+
+/*end of contact page*/
+
+/*footer*/
+footer {
+  background-color: #a5c476;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site_footer {
+  display: grid;
+  grid-template-columns: 200px auto auto 100px;
+  gap: 50px;
+  padding: 30px;
+  text-align: left;
+  font-size: 16px;
+  background-color: #a5c476;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #0d3b3e;
+}
+
+.socials a{
+  color: #0d3b3e;
+}
+.socials a:hover {
+    color: #ffbb74;
+}
+
+/*media queries for responsive design*/
+/*mobile styles for text*/
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/*to make header responsive*/
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+/*this makes the logo smaller on small screens*/
+  .logo img {
+    width: 120px;
+  }
+/*removed absolute centering of header text on small screens to avoid overlap*/
+  .header_text {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+    pointer-events: auto;
+  }
+
+  .header_text h1,
+  .header_text h2 {
+    font-size: 1.2rem;
+  }
+
+  .nav_list ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+/*main section padding adjustment*/
+@media (max-width: 768px) {
+  .main {
+    padding: 20px;
+  }
+
+  .main_video {
+    padding: 20px;
+  }
+}
+
+/*footer stacked on smaller screens*/
+@media (max-width: 600px) {
+  .site_footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "foot_address"
+      "open_times"
+      "copyright"
+      "socials";
+  }
+}
